@@ -1,0 +1,1028 @@
+/*
+Theme Name: Street Art Belgium
+Theme URI: http://www.streetartbelgium.com
+Author: Jurriaan Persyn and Katrijn Michiels
+Author URI: http://www.streetartbelgium.com
+Description: Theme for StreetArtBelgium, design by Katrijn Michiels, implementation by Jurriaan Persyn, based on toolbox, a semantic, HTML5, canvas for CSS artists and an ultra-minimal set of super-clean templates for your own WordPress theme development.
+Version: 0.1
+License: GNU General Public License
+License URI: license.txt
+Tags: microformats, html5
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+	}
+
+h1, h2, h3, h4 {
+	margin-top: 0;
+}
+
+/* BODY */
+
+a {
+	display:inline; 
+	text-decoration: none;
+}
+
+#menulinks a:hover, #content a:hover {
+	text-decoration: underline;
+}
+
+#crumbs a:hover, #menulinks a:hover, #content .artistsandlocations .content .item a:hover, h1 a, h2 a, h3 a {
+	text-decoration: none !important;
+}
+
+#content a {
+	-webkit-transition: all ease 0.4s; 
+	-moz-transition: all ease 0.4s;
+	transition: all ease 0.4s;
+	color: black;
+}
+#content .entry-content a, #content .entry-meta a, #content #comments a {
+	font-weight: bold;
+}
+#content a:visited {
+	color: black;
+}
+#content a:hover {
+	text-decoration: underline;
+}
+#content h1, #content h2, #content h3, #content h4, #content h5, #content h6, #content h7,
+#content h1 a:hover, #content h2 a:hover, #content h3 a:hover, #content h4 a:hover, #content h5 a:hover, #content h6 a:hover, #content h7 a:hover {
+	border-bottom: none;
+}
+
+h1, h2, h3, h4, .crumbs, .highlight, #menu {
+	font-family: "Lucida Grande", Lucida, Verdana, Geneva, sans-serif;
+	letter-spacing:1px;
+	font-size: 15px;
+}
+
+body {
+	background: url(images/bg.jpg) repeat;
+	font-family: "Lucida Grande", Lucida, Verdana, Geneva, sans-serif;
+	padding: 0;
+	margin: 0;
+	font-size: 13px;
+}
+
+#topline {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	height: 7px;
+	background:#FCEE21;
+}
+
+#site {
+	width: 960px;
+	margin: 0 auto;
+}
+
+/* =Structure
+-------------------------------------------------------------- */
+
+#page {
+	display: block;
+}
+#main .widget-area {
+	float: right;
+	overflow: hidden;
+	width: 220px;
+}
+#colophon {
+	clear: both;
+	display: block;
+	width: 100%;
+}
+#colophon a {
+	border-bottom: none;
+}
+
+/* Text meant only for screen readers */
+.screen-reader-text,
+.section-heading {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+/* Alignment */
+.alignleft {
+	display: inline;
+	float: left;
+}
+.alignright {
+	display: inline;
+	float: right;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+/* =Header
+-------------------------------------------------------------- */
+
+#site-title {
+	font-size: 2em;
+	font-weight: bold;
+	margin: .67em 0;
+}
+#site-description {
+	font-size: 1em;
+	font-weight: normal;
+	margin: 0 0 1em;
+}
+
+/* MENU */
+
+
+#menu {
+	margin: 0;
+	padding: 0;
+	position: relative;
+	text-transform: uppercase;
+}
+
+#logo {
+	float:left;
+	margin-top: 25px;
+	margin-left: -10px;
+}
+
+#socialmedia {
+	position: relative;
+	float:right;
+	/*margin-top: 20px;*/
+	margin-right: -20px;
+	z-index: 3;
+}
+#socialmedia a {
+	position: absolute;
+	-webkit-transition: all ease 0.4s; 
+	-moz-transition: all ease 0.4s;
+	transition: all ease 0.4s;
+}
+#socialmedia a.rss {
+	top: 27px;
+	right: 132px;
+	z-index: 5;
+	width: 87px;
+	height: 87px;
+	background: url(images/rss.png);
+	z-index: 3;
+}
+#socialmedia a.rss:hover {
+	background: url(images/rss_hover.png);
+}
+#socialmedia a.facebook {
+	top: 57px;
+	right: 89px;
+	width: 82px;
+	height: 83px;
+	background: url(images/facebook.png);
+	z-index: 2;
+}
+#socialmedia a.facebook:hover {
+	background: url(images/facebook_hover.png);
+}
+#socialmedia a.twitter {
+	top: 15px;
+	right: 20px;
+	width: 108px;
+	height: 107px;
+	background: url(images/twitter.png);
+	z-index: 1;
+}
+#socialmedia a.twitter:hover {
+	background: url(images/twitter_hover.png);
+}
+
+#menulinks {
+	float:right;
+	text-align: right;
+	margin-top: 10px;
+}
+
+#menulinks li {
+	font-size:15px;
+	line-height: 110%;
+	letter-spacing: 0.5px;
+}
+
+#menulinks li a {
+	color: black;
+	text-decoration: none;
+}
+
+#menulinks li a:hover {
+	color: black;
+	text-decoration: underline;
+}
+
+#menu hr {
+	margin-top: 70px;
+	z-index: -1;
+	position: relative;
+	border: 0;
+	background-color: #000;
+	height: 1px;
+}
+
+
+
+/* =Menu
+-------------------------------------------------------------- */
+
+#access ul {
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+}
+
+
+/* =Content
+-------------------------------------------------------------- */
+
+.entry-meta {
+	clear: both;
+	display: block;
+}
+#content nav {
+	display: block;
+	overflow: hidden;
+}
+#content nav .nav-previous {
+	float: left;
+	width: 50%;
+}
+#content nav .nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+}
+#content #nav-above {
+	display: none;
+}
+.paged #content #nav-above,
+.single #content #nav-above {
+	display: block;
+}
+.page-link {
+	margin: 0 0 1em;
+}
+
+/* 404 page */
+.error404 .widget {
+	float: left;
+	width: 33%;
+}
+.error404 .widget .widgettitle,
+.error404 .widget ul {
+	margin-right: 1em;
+}
+.error404 .widget_tag_cloud {
+	clear: both;
+	float: none;
+	width: 100%;
+}
+
+/* Notices */
+.post .notice,
+.error404 #searchform {
+	background: #eee;
+	display: block;
+	padding: 1em;
+}
+
+/* Image Attachments */
+.image-attachment div.entry-meta {
+	float: left;
+}
+.image-attachment nav {
+	float: right;
+	margin: 0 0 1em 0;
+}
+.image-attachment .entry-content {
+	clear: both;
+}
+.image-attachment .entry-content .entry-attachment {
+	background: #eee;
+	margin: 0 0 1em;
+	padding: 1em;
+	text-align: center;
+}
+.image-attachment .entry-content .attachment {
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+}
+
+/* Aside Posts */
+.format-aside .entry-header {
+	display: none;
+}
+.single .format-aside .entry-header {
+	display: block;
+}
+.format-aside .entry-content,
+.format-aside .entry-summary {
+	padding-top: 1em;
+}
+.single .format-aside .entry-content,
+.single .format-aside .entry-summary {
+	padding-top: 0;
+}
+
+/* Aside Posts */
+.format-gallery .gallery-thumb {
+	float: left;
+	margin-right: 1em;
+}
+
+/* CONTENT */
+
+#content {
+	clear:both;
+	margin-left: 2px;
+	margin-right: -2px;
+}
+
+/* titles */
+
+h1 {
+	text-transform:uppercase;
+	font-weight: bold;
+	margin: 0px 0px 2px 0px;
+	font-size: 14px;
+}
+h1 a {
+	color: black;
+	text-decoration: none;
+}
+
+h2 {
+	text-transform:uppercase;
+	margin: 5px 0px 10px 0px;
+	font-size: 12px;
+	background:#FCEE21;
+	padding: 5px 2px 0x 2px;
+	font-family: "Lucida Grande", Lucida, Verdana, Geneva, sans-serif;
+}
+
+h3 {
+	text-transform:uppercase;
+	margin: 5px 0px 10px 0px;
+	font-size: 12px;
+	padding: 5px 2px 0x 2px;
+	font-family: "Lucida Grande", Lucida, Verdana, Geneva, sans-serif;
+}
+
+
+/* =Images
+-------------------------------------------------------------- */
+
+a img {
+	border: none;
+}
+p img {
+	margin-top: 0.5em; /* a small bottom margin prevents content floating under images */
+	margin-bottom: -4px;
+}
+/*
+Resize images to fit the main content area.
+- Applies only to images uploaded via WordPress by targeting size-* classes.
+- Other images will be left alone. Use "size-auto" class to apply to other images.
+*/
+img.size-auto,
+img.size-full,
+img.size-large,
+img.size-medium,
+.attachment img,
+.widget-area img {
+	max-width: 100%; /* When images are too wide for containing element, force them to fit. */
+	height: auto; /* Override height to match resized width for correct aspect ratio. */
+}
+img.alignleft {
+	margin-right: 1em;
+}
+img.alignright {
+	margin-left: 1em;
+}
+.wp-caption {
+	padding: .5em;
+	text-align: center;
+}
+.wp-caption img {
+	margin: .25em;
+}
+.wp-caption .wp-caption-text {
+	margin: .5em;
+}
+.gallery-caption {
+	
+}
+.wp-smiley {
+	margin: 0;
+}
+
+/* =About
+-------------------------------------------------------------- */
+
+.profile {
+	height: 90px;
+	padding: 0;
+	clear:both;
+}
+.profile img.alignleft {
+	margin-right: 10px;
+}
+.profile img.alignright {
+	margin-left: 10px;
+}
+.profile ul {
+	margin: 0;
+	list-style: none;
+	padding: 0;
+}
+.profile li {
+	margin: 0;
+	padding: 0;
+}
+.profile.right {
+	text-align: right;
+}
+	
+.people_topic {
+	text-transform:uppercase;
+	margin: 5px 0px 10px 0px;
+	font-size: 13px;
+	font-weight: bold;
+	padding: 5px 2px 0x 2px;
+}
+
+
+
+/* =Forms
+-------------------------------------------------------------- */
+
+#searchform label {
+	display: none;
+}
+#searchform input#s {
+	width: 60%;
+}
+input[type=text],
+input#s {
+	margin: 0 1em 0 0;
+	width: 60%;
+}
+textarea {
+	width: 80%;
+}
+
+/* Class for labelling required form items */
+.required {
+	color: #cc0033;
+}
+
+
+/* =Comments
+-------------------------------------------------------------- */
+
+article.comment {
+	display: block;
+}
+#respond input[type=text] {
+	display: block;
+	width: 60%;
+}
+#respond textarea {
+	display: block;
+	margin: 0 0 1em;
+	width: 95%;
+}
+#respond .form-allowed-tags {
+	clear: both;
+	width: 80%;
+}
+#respond .form-allowed-tags code {
+	display: block;
+}
+
+
+/* =Widgets
+-------------------------------------------------------------- */
+
+.widget {
+	display: block;
+}
+.widget-area .widget_search {
+	overflow: hidden;
+}
+.widget-area .widget_search input {
+	float: left;
+}
+
+/* =Searchresults
+-------------------------------------------------------------- */
+
+.serachresults_title {
+	text-transform:uppercase;
+	margin: 5px 0px 10px 0px;
+	font-size: 12px;
+	background:#FCEE21;
+	padding: 10px 2px 5x 2px;
+}
+
+
+/* =Footer
+-------------------------------------------------------------- */
+
+#colophon {
+	border-top: 1px solid black;
+	padding: 10px 0 0 0;
+	margin-top: 60px;
+}
+#colophon ul {
+	list-style: none;
+	margin: 0;
+	margin-left: 250px;
+}
+#colophon ul li {
+	margin: 0 auto;
+	margin-right: 13px;
+	text-transform: uppercase;
+	font-size: 15px;
+}
+#colophon ul li a {
+	text-decoration: none;
+	font-weight:bold;
+	color: black;
+	}
+#colophon ul li a:hover {
+	color: black;
+	}
+
+#socialmediafooter {
+	position: relative;
+	margin-top: -105px;
+	margin-left: 100px;
+	z-index: 3;
+	right: 700px;
+}
+#socialmediafooter a {
+	position: absolute;
+	-webkit-transition: all ease 0.4s; 
+	-moz-transition: all ease 0.4s;
+	transition: all ease 0.4s;
+}
+#socialmediafooter a.rss {
+	top: 27px;
+	right: 132px;
+	z-index: 5;
+	width: 87px;
+	height: 87px;
+	background: url(images/rss.png);
+	z-index: 3;
+}
+#socialmediafooter a.rss:hover {
+	background: url(images/rss_hover.png);
+}
+#socialmediafooter a.facebook {
+	top: 57px;
+	right: 89px;
+	width: 82px;
+	height: 83px;
+	background: url(images/facebook.png);
+	z-index: 2;
+}
+#socialmediafooter a.facebook:hover {
+	background: url(images/facebook_hover.png);
+}
+#socialmediafooter a.twitter {
+	top: 15px;
+	right: 20px;
+	width: 108px;
+	height: 107px;
+	background: url(images/twitter.png);
+	z-index: 1;
+}
+#socialmediafooter a.twitter:hover {
+	background: url(images/twitter_hover.png);
+}
+
+
+/* =Street Art Belgium
+-------------------------------------------------------------- */
+
+.postwrapper {
+	float: left;
+}
+
+.post_1, .post_3, .post_4, .recentcomments {
+	margin-right: 20px;
+}
+
+.post_3, .post_4, .recentcomments {
+	float: left;
+}
+.post_3 article.featured, .post_4 article.featured, .recentcomments {
+	width: 580px;
+}
+.post_3 article.featured .entry-image, .post_4 article.featured .entry-image {
+	height: 340px;
+	width: 560px;
+	background-size: cover;
+}
+.post_5, .post_6, .post_7, .post_8 {
+	float: right;
+}
+.post_5 article.featured, .post_6 article.featured, .post_7 article.featured, .post_8 article.featured {
+	width: 360px;
+}
+.post_5 article.featured .entry-image, .post_6 article.featured .entry-image, .post_7 article.featured .entry-image, .post_8 article.featured .entry-image {
+	height: 180px;
+	width: 340px;
+	background-size: cover;
+}
+
+article.featured h1 {
+	height: 16px;
+	overflow: hidden;
+	line-height: 18px;
+}
+
+div.boxstyle {
+	background-color: white;
+	border-bottom: 4px solid #FCEE21;
+	border-right: 4px solid #FCEE21;
+	margin-bottom: 10px;
+}
+div.boxstylecontent {
+	border:1px solid #666;
+	padding: 10px;
+}
+
+article.featured {
+	float: left;
+	background-color: white;
+	width: 466px;
+	margin-bottom: 20px;
+	border-bottom: 4px solid #FCEE21;
+	border-right: 4px solid #FCEE21;
+}
+article.featured .featuredcontent {
+	border:1px solid #666;
+	padding: 10px;
+}
+
+/*article.featured .date, .boxstyle .date {
+	text-transform:uppercase;
+	margin: 5px 0px 10px 0px;
+	font-size: 12px;
+	background:#FCEE21;
+	padding: 10px 2px 5x 2px;
+}*/
+
+article.featured .entry-image {
+	background-position: center;
+	height: 200px;
+	width: 445px;
+	margin-top: 10px;
+	background-size: cover;
+}
+
+article.featured .excerpt {
+	height: 2.2em;
+	overflow: hidden;
+}
+
+.artistsandlocations {
+	clear: both;
+	text-transform: uppercase;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.artistsandlocations div.artists, .artistsandlocations div.locations {
+	width: 367px;
+}
+.artistsandlocations div.adspace {
+	width: 206px;
+	margin: 0 10px;
+}
+.artistsandlocations div.adspace div {
+	height: 150px;
+	background-color: pink;
+}
+.artistsandlocations div.item {
+	float: left;
+	width: 116px;
+	height: 15px;
+	overflow: hidden;
+	padding: 3px 6px 3px 0;
+	line-height: 18px;
+	white-space: nowrap;
+}
+.artistsandlocations div a {
+	font-size: 14px;
+	color: black;
+	text-decoration: none;
+}
+.artistsandlocations div.bold a {
+	font-weight: bold;
+}
+
+ul.subcategories {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+ul.subcategories li {
+	float: left;
+	width: 175px;
+	text-transform: uppercase;
+	height: 18px;
+	overflow: hidden;
+	padding: 0px;
+	line-height: 18px;
+}
+ul.subcategories li.bold {
+	font-weight: bold;
+}
+
+#content a.readmore {
+	color: black;
+	text-decoration: none;
+	font-weight:normal;
+}
+
+ul.otherpieces {
+	list-style: none;
+	padding: 0;
+}
+ul.otherpieces li {
+	float: left;
+	margin-right: 5px;
+}
+ul.otherpieces li:hover {
+	opacity: 0.8;
+	-moz-opacity: 0.8;
+}
+ul.otherpieces li .entry-image {
+	width: 80px;
+	height: 80px;
+	background-size: cover;
+}
+div.catimage ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.categorydetails h3 {
+	margin: 0;
+	text-transform: uppercase;
+	font-size: 18px;
+	text-align: left;
+}
+.categorycontent {
+	margin-top: 10px;
+}
+
+.categorydetails .toggleArrow {
+	float: right;
+	display: block;
+	border-top: 8px solid black;
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+}
+
+#content a.black {
+	text-decoration: none;
+	color: black;
+	font-weight:bold;
+}
+#content a.highlight, #content .highlight {
+	font-family: "Arial Narrow", Arial;
+	text-transform:uppercase;
+	margin: 5px 0px 10px 0px;
+	font-size: 13px;
+	background:#FCEE21;
+	padding: 10px 2px 5x 2px;
+}
+#content a.highlight:hover, a.highlight:hover, #content .highlight:hover a {
+	text-decoration: none;
+}
+
+.boxstyle h3 {
+	text-transform:uppercase;
+	font-weight: bold;
+	font-size: 15px;
+}
+
+.archivepostwrapper {
+	margin: 0 -10px;
+}
+
+.archivepost {
+	float: left;
+	width: 165px; 
+	margin: 0 12px;
+	height: 230px;
+}
+
+article.archivepost .entry-image {
+	background-position: center;
+	height: 165px;
+	width: 165px;
+	margin-top: 10px;
+	background-size: cover;
+}
+
+.crumbs a, .crumbs div, .crumbs span {
+	float: left;
+	font-size: 15px;
+	font-weight: bold;
+	display: block;
+	margin-right: 1px;
+	text-decoration: none;
+	color: black;
+	text-transform: uppercase;
+}
+.crumbs span {
+	margin-right: 5px;
+}
+
+/* PAGE NUMBERS */
+
+#wp_page_numbers li.page_info {
+	display: none;
+	}
+
+#wp_page_numbers ul li {
+	background-color: #FCEE21;
+	margin: 3px;
+	border-bottom: 3px solid #FCEE21;
+	}
+#wp_page_numbers ul li a {
+	color: black;
+	
+	}
+#wp_page_numbers ul, #wp_page_numbers li, #wp_page_numbers a {
+	padding: 0;
+	margin: 0;
+	border: none;
+	text-decoration: none;
+	text-align: left;
+}
+
+#wp_page_numbers {
+	margin-top: 5px;
+	width: 100%;
+}
+#wp_page_numbers ul {
+	float: right;
+}
+#wp_page_numbers li {
+	float: left;
+	display: block;
+}
+#wp_page_numbers a {
+	padding: 5px 7px;
+	display: block;
+	color: black;
+	font-size: 14px;
+	font-weight:bold;
+}
+#wp_page_numbers a:hover {
+	text-decoration: none;
+}
+#wp_page_numbers li a:hover {
+}
+#wp_page_numbers li.first_last_page {
+	font-style: italic;
+}
+#wp_page_numbers li.active_page {
+	background-color: white;
+}
+
+
+.arrow-n,
+.arrow-e,
+.arrow-s,
+.arrow-w,
+#wp_page_numbers .rightarrow,
+#wp_page_numbers .leftarrow {
+  /*
+   * In Internet Explorer, The"border-style: dashed" will never be
+   * rendered unless "(width * 5) >= border-width" is true.
+   * Since "width" is set to "0", the "dashed-border" remains
+   * invisible to the user, which renders the border just like how
+   * "border-color: transparent" renders.
+   */
+  border-style: dashed;
+  border-color: transparent;
+  border-width: 0.53em;
+  display: -moz-inline-box;
+  display: inline-block;
+  /* Use font-size to control the size of the arrow. */
+  font-size: 10px;
+  height: 0;
+  line-height: 0;
+  position: relative;
+  vertical-align: middle;
+  width: 0;
+}
+
+.arrow-n {
+  border-bottom-width: 1em;
+  border-bottom-style: solid;
+  border-bottom-color: black;
+  bottom: 0.25em;
+}
+
+.arrow-e, #wp_page_numbers .rightarrow {
+  border-left-width: 1em;
+  border-left-style: solid;
+  border-left-color: black;
+  left: 0.25em;
+}
+                    
+.arrow-s {
+  border-top-width: 1em;
+  border-top-style: solid;
+  border-top-color: black;
+  top: 0.25em;
+}
+
+.arrow-w, #wp_page_numbers .leftarrow {
+  border-right-width: 1em;
+  border-right-style: solid;
+  border-right-color: black;
+  right: 0.25em;
+}
+
+/* RECENT COMMENTS */
+
+.recentcomments ul {
+	padding-left: 20px;
+}
+
+/* =Comment box
+-------------------------------------------------------------- */
+
+#dsq-content {
+	margin-top: -5px;
+}
+
+#dsq-global-toolbar {
+	display: none !important;
+}
+
+.dsq-subscribe-rss {
+	display: none !important;
+}
+
+.dsq-trackback-url {
+	display: none !important;
+}
+
+.dsq-subscribe-email {
+	font-weight: bold !important;
+}
+
+#disqus_thread h2, #disqus_thread h3, #disqus_thread h4 {
+	font-family: "Arial Narrow", "Arial";
+	text-transform: uppercase;
+}
+
+.dsq-reply {
+	margin-top: 10px !important;
+}
+
+.dsq-comment-header {
+	text-transform: uppercase;
+	font-family: "Arial Narrow", Arial;
+	background: none !important;
+	border: none !important;
+	border-bottom: 1px solid black !important;
+	border-radius: 0 !important;
+	-webkit-border-radius: 0 !important;
+	-moz-border-radius: 0 !important;
+	padding-left: 0 !important;
+}
