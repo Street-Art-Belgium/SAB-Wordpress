@@ -719,19 +719,17 @@ article.featured .excerpt {
 }
 
 .artistsandlocations div.artists, .artistsandlocations div.locations {
-	width: 367px;
+	width: 470px;
 }
-.artistsandlocations div.adspace {
-	width: 206px;
-	margin: 0 10px;
+.artistsandlocations h3 {
+	margin: 0;
 }
-.artistsandlocations div.adspace div {
-	height: 150px;
-	background-color: pink;
+.artistsandlocations div.artists {
+	margin-right: 20px;
 }
 .artistsandlocations div.item {
 	float: left;
-	width: 116px;
+	width: 150px;
 	height: 15px;
 	overflow: hidden;
 	padding: 3px 6px 3px 0;

@@ -20,9 +20,6 @@ if ($pageNumber === 1) {
 			</div>
 		</div>
 	</div>
-	<div class="adspace alignleft">
-		<div class=""></div>
-	</div>
 	<div class="locations alignleft">
 		<div class="clearfix">
 			<h3><a href="/category/locations/">Top Locations</a></h3>
