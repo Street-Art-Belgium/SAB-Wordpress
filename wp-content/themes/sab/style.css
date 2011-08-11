@@ -41,9 +41,6 @@ a {
 }
 
 #content a {
-	-webkit-transition: all ease 0.4s; 
-	-moz-transition: all ease 0.4s;
-	transition: all ease 0.4s;
 	color: black;
 }
 #content .entry-content a, #content .entry-meta a, #content #comments a {
@@ -172,9 +169,6 @@ body {
 }
 #socialmedia a {
 	position: absolute;
-	-webkit-transition: all ease 0.4s; 
-	-moz-transition: all ease 0.4s;
-	transition: all ease 0.4s;
 }
 #socialmedia a.rss {
 	top: 27px;
@@ -586,9 +580,6 @@ article.comment {
 }
 #socialmediafooter a {
 	position: absolute;
-	-webkit-transition: all ease 0.4s; 
-	-moz-transition: all ease 0.4s;
-	transition: all ease 0.4s;
 }
 #socialmediafooter a.rss {
 	top: 27px;
@@ -1024,3 +1015,19 @@ article.archivepost .entry-image {
 	-moz-border-radius: 0 !important;
 	padding-left: 0 !important;
 }
+
+/*
+Images are wrapped in divs classed "flickr_badge_image" with ids "flickr_badge_imageX" where "X" is an integer specifying ordinal position. Below are some styles to get you started!
+*/
+#flickr_badge_uber_wrapper {text-align:center;}
+#flickr_badge_wrapper {padding:10px 0 10px 0;}
+.flickr_badge_image {margin:0 8px 13px 8px; float: left;}
+.flickr_badge_image img {border: 1px solid black !important;}
+#flickr_badge_source {text-align:left; margin:0 10px 0 10px;}
+#flickr_www {color:#3993ff !important;}
+#flickr_badge_uber_wrapper a:hover,
+#flickr_badge_uber_wrapper a:link,
+#flickr_badge_uber_wrapper a:active,
+#flickr_badge_uber_wrapper a:visited {text-decoration:none !important; background:inherit !important;color:#000000;}
+#flickr_badge_wrapper {background-color:#ffffff;border: solid 1px #ffffff}
+#flickr_badge_source {padding:0 !important; color:#000000 !important; clear: both;}

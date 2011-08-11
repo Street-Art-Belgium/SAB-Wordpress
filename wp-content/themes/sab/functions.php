@@ -219,54 +219,91 @@ function sab_findtwittername($text)
 	return "";
 }
 
+function sab_findflickrname($text) {
+	// The Regular Expression filter
+	$regexUrl = "/<!--\sflickr\:\s(\S*)-(\S*)?\s-->/";
+
+	// Check if there is a url in the text
+	if (preg_match($regexUrl, $text, $url)) 
+	{
+	       // make the urls hyper links
+	       return array($url[1], $url[2]);
+	}
+
+	return "";
+}
+
 function sab_printartistwidgets($text) {
 	$twitterName = sab_findtwittername($text);
 	if ($twitterName) {
 	 	?>
-<div class="boxstyle alignright" style="width: 400px; margin-left: 10px;"><div class="boxstylecontent" style="height: 350px;">
-<h3><?php single_cat_title(); ?> on twitter</h3>
-<script src="http://widgets.twimg.com/j/2/widget.js"></script>
-<script>
-new TWTR.Widget({
-  version: 2,
-  type: 'profile',
-  rpp: 4,
-  interval: 6000,
-  width: 380,
-  height: 320,
-  theme: {
-    shell: {
-      background: '#ffffff',
-      color: '#000000'
-    },
-    tweets: {
-      background: '#ffffff',
-      color: '#000000',
-      links: '#000000'
-    }
-  },
-  features: {
-    scrollbar: false,
-    loop: false,
-    live: false,
-    hashtags: true,
-    timestamp: true,
-    avatars: false,
-    behavior: 'all'
-  }
-}).render().setUser('<?php echo $twitterName; ?>').start();
-</script>
-</div></div>
-<?php
+			<div class="boxstyle alignright" style="width: 400px; margin-left: 10px;"><div class="boxstylecontent" style="height: 350px;">
+			<h3><?php single_cat_title(); ?> on twitter</h3>
+			<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+			<script>
+			new TWTR.Widget({
+			  version: 2,
+			  type: 'profile',
+			  rpp: 4,
+			  interval: 6000,
+			  width: 380,
+			  height: 320,
+			  theme: {
+			    shell: {
+			      background: '#ffffff',
+			      color: '#000000'
+			    },
+			    tweets: {
+			      background: '#ffffff',
+			      color: '#000000',
+			      links: '#000000'
+			    }
+			  },
+			  features: {
+			    scrollbar: false,
+			    loop: false,
+			    live: false,
+			    hashtags: true,
+			    timestamp: true,
+			    avatars: false,
+			    behavior: 'all'
+			  }
+			}).render().setUser('<?php echo $twitterName; ?>').start();
+			</script>
+			</div></div>
+			<?php
 	}
 	$facebookUrl = sab_findfacebookurl($text);
 	if ($facebookUrl) {
 		?>
-<div class="boxstyle alignright" style="width: 400px; margin-left: 10px;"><div class="boxstylecontent" style="height: 350px;">
-<h3><?php single_cat_title(); ?> on facebook</h3>
-<fb:like-box href="<?php echo $facebookUrl; ?>" width="380" height="320" show_faces="false" border_color="#fff" stream="true" header="false"></fb:like-box>
-</div></div>
+			<div class="boxstyle alignright" style="width: 400px; margin-left: 10px;"><div class="boxstylecontent" style="height: 350px;">
+			<h3><?php single_cat_title(); ?> on facebook</h3>
+			<fb:like-box href="<?php echo $facebookUrl; ?>" width="380" height="320" show_faces="false" border_color="#fff" stream="true" header="false"></fb:like-box>
+			</div></div>
 		<?php
+	}
+	list($flickrName, $flickrUid) = sab_findflickrname($text);
+	if ($flickrName && $flickrUid) {
+		?>
+			<!-- Start of Flickr Badge -->
+			<div class="boxstyle alignright" style="width: 400px; margin-left: 10px;">
+				<div class="boxstylecontent clearfix" style="height: 350px;">
+					<h3><?php single_cat_title(); ?> on <a href="http://www.flickr.com" id="flickr_www"><strong style="color:#3993ff">flick<span style="color:#ff1c92">r</span></strong>.com</a></h3>
+					<div id="flickr_badge_uber_wrapper">
+						<div id="flickr_badge_wrapper">
+							<script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?show_name=1&count=10&display=latest&size=s&layout=x&source=user&user=<?php echo urlencode($flickrUid); ?>"></script>
+							<div id="flickr_badge_source">
+								<span id="flickr_badge_source_txt">
+									<nobr>Go to</nobr> <a href="http://www.flickr.com/photos/<?php echo $flickrName; ?>/"><?php echo $flickrName; ?>'s photostream</a>
+								</span>
+								<br clear="all" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End of Flickr Badge -->
+		<?
 	}
 }
 
