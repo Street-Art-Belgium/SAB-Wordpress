@@ -7,6 +7,7 @@
 <html <?php language_attributes(); ?> xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
+<meta property="fb:admins" content="524186608" />
 <title><?php
 	/*
 	 * Print the <title> tag based on what is being viewed.
