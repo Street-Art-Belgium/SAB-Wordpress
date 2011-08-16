@@ -706,11 +706,12 @@ article.featured .excerpt {
 	clear: both;
 	text-transform: uppercase;
 	margin-top: 20px;
-	margin-bottom: 20px;
+	margin-bottom: 40px;
 }
 
 .artistsandlocations div.artists, .artistsandlocations div.locations {
 	width: 470px;
+	margin-top: 10px;
 }
 .artistsandlocations h3 {
 	margin: 0;
