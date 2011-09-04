@@ -1111,6 +1111,10 @@ Images are wrapped in divs classed "flickr_badge_image" with ids "flickr_badge_i
 .onlywidescreen { display: block; }
 .onlysmallscreen { display: none; }
 
+.wp_geo_static_map {
+	width: 100%;
+}
+
 /* mobile styles */
 @media all and (max-width: 600px) {
 

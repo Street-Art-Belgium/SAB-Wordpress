@@ -83,9 +83,16 @@
 			if ($originalPost->ID && get_post_meta( absint($originalPost->ID), WPGEO_LATITUDE_META, true ))
 			{
 				echo '<div class="categorycontent clearfix" id="locationContent">';
-				echo '<div style="margin-top: 10px;">';
-				echo get_wpgeo_post_map($originalPost->ID, "250");
-				echo '</div>';
+				echo '	<div class="onlywidescreen" style="margin-top: 10px;">';
+				echo 		get_wpgeo_post_map($originalPost->ID, "250");
+				echo '	</div>';
+				if (function_exists('get_wpgeo_post_static_map')) {
+					echo '<div class="staticmap onlysmallscreen">';
+					echo '	<a href="' . wpgeo_map_link('echo=0') . '">';
+					echo 		get_wpgeo_post_static_map($originalPost->ID, "width=600&height=400");
+					echo '	</a>';
+					echo '</div>';
+				}
 				echo '</div>';	
 			}
 
