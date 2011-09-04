@@ -92,7 +92,7 @@ get_header(); ?>
 				<?php
 					if (!$isSpecialCategory && isset($wpgeo) && $geoIsSet) { 
 				?>
-					<div class="boxstyle categorymapwrapper">
+					<div class="boxstyle categorymapwrapper onlywidescreen">
 						<div class="boxstylecontent" style="padding: 0px; height: 420px;">
 							<?php $wpgeo->categoryMap(array('height' => '420px')); ?>
 											
