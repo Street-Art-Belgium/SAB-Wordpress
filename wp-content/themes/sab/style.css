@@ -112,6 +112,11 @@ body {
   position: absolute !important;
   clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
   clip: rect(1px, 1px, 1px, 1px);
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
 }
 
 /* Alignment */
@@ -1272,6 +1277,17 @@ Images are wrapped in divs classed "flickr_badge_image" with ids "flickr_badge_i
 		padding: 5px;
 	}
 
+	article.archivepost .entry-image {
+		width: 100%;
+	}
+	article.archivepost {
+		width: 50%;
+		margin: 0;
+	}
+	article.archivepost .entry-content {
+		margin: 10px;
+	}
+
 	.socialwidgetcontent {
 		display: none;
 	}
@@ -1302,5 +1318,11 @@ Images are wrapped in divs classed "flickr_badge_image" with ids "flickr_badge_i
 	}
 	.searchformwrapper {
 		float: none;
+	}
+}
+
+@media all and (max-width: 350px) { 
+	article.archivepost {
+		width: 100%;
 	}
 }
