@@ -45,7 +45,7 @@ a {
 #content a {
 	color: black;
 }
-#content .entry-content a, #content .entry-meta a, #content #comments a {
+#content .entry-content a, #content .entry-meta a, #content #comments a, #content .categorydescriptiongeocontent a {
 	font-weight: bold;
 }
 #content a:visited {
@@ -1056,7 +1056,7 @@ Images are wrapped in divs classed "flickr_badge_image" with ids "flickr_badge_i
 #flickr_badge_source {padding:0 !important; color:#000000 !important; clear: both;}
 
 /* You can modify these CSS styles */
-.vimeoBadge { margin: 0; padding: 0; font: normal 11px verdana,sans-serif; }
+.vimeoBadge { margin: 0; padding: 0; }
 .vimeoBadge img { border: 0; }
 .vimeoBadge a, .vimeoBadge a:link, .vimeoBadge a:visited, .vimeoBadge a:active { color: #3A75C4; text-decoration: none; cursor: pointer; }
 .vimeoBadge a:hover { color:#00CCFF; }
