@@ -20,17 +20,21 @@ get_header();
 						<?php get_template_part( 'content', 'index' ); ?>
 						<?php 
 							if ($postCount == 2) {
+								$GLOBALS['onlyWideScreen'] = true;
 								get_template_part( 'widgets', 'artistsandlocations' );
+								$GLOBALS['onlyWideScreen'] = false;
 							}
 						?>
 					</div>
 
 					<?php if ($postCount==2) { ?>
-						<div class="alignleft" style="width: 580px;">
+						<div class="homepagecolumnleft">
 					<?php } elseif ($postCount==4) {
+						$GLOBALS['onlyWideScreen'] = true;
 						get_template_part( 'widgets', 'recentcomments' );
+						$GLOBALS['onlyWideScreen'] = false;
 					?>
-						</div><div class="alignright" style="width: 380px;">
+						</div><div class="homepagecolumnright">
 					<?php } elseif ($postCount == 7) { ?>
 						</div>
 					<?php } ?>
@@ -48,7 +52,18 @@ get_header();
 							<?php if(function_exists('wp_page_numbers')) { wp_page_numbers(); } ?>
 						</div>
 					</nav><!-- #nav-below -->
-				<?php endif; ?>				
+				<?php endif; ?>		
+				
+				<div class="onlysmallscreen">
+					<div>
+					<?php
+					get_template_part( 'widgets', 'artistsandlocations' );	
+					?>
+					</div>
+					<?php
+					get_template_part( 'widgets', 'recentcomments' );	
+					?>
+				</div>
 
 			</div><!-- #content -->
 		</div><!-- #primary -->

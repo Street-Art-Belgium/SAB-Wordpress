@@ -204,8 +204,7 @@ function sab_findfacebookurl($text)
 	return "";
 }
 
-function sab_findtwittername($text) 
-{
+function sab_findtwittername($text) {
 	// The Regular Expression filter
 	$regexUrl = "/<!--\stwitter\:\s(\S*)?\s-->/";
 
@@ -233,12 +232,27 @@ function sab_findflickrname($text) {
 	return "";
 }
 
+function sab_findvimeousername($text) {
+	// The Regular Expression filter
+	$regexUrl = "/<!--\svimeo\:\s(\S*)?\s-->/";
+
+	// Check if there is a url in the text
+	if (preg_match($regexUrl, $text, $url)) 
+	{
+	       // make the urls hyper links
+	       return $url[1];
+	}
+
+	return "";
+}
+
 function sab_printartistwidgets($text) {
 	$twitterName = sab_findtwittername($text);
 	if ($twitterName) {
 	 	?>
-			<div class="boxstyle alignright" style="width: 400px; margin-left: 10px;"><div class="boxstylecontent" style="height: 350px;">
-			<h3><?php single_cat_title(); ?> on twitter</h3>
+			<div class="boxstyle alignright socialwidgetwrapper"><div class="boxstylecontent socialwidget">
+			<h3><a href="http://twitter.com/<?php echo $twitterName; ?>"><?php single_cat_title(); ?> on twitter</a></h3>
+			<div class="socialwidgetcontent">
 			<script src="http://widgets.twimg.com/j/2/widget.js"></script>
 			<script>
 			new TWTR.Widget({
@@ -270,15 +284,18 @@ function sab_printartistwidgets($text) {
 			  }
 			}).render().setUser('<?php echo $twitterName; ?>').start();
 			</script>
+			</div>
 			</div></div>
 			<?php
 	}
 	$facebookUrl = sab_findfacebookurl($text);
 	if ($facebookUrl) {
 		?>
-			<div class="boxstyle alignright" style="width: 400px; margin-left: 10px;"><div class="boxstylecontent" style="height: 350px;">
-			<h3><?php single_cat_title(); ?> on facebook</h3>
+			<div class="boxstyle alignright socialwidgetwrapper"><div class="boxstylecontent socialwidget">
+			<h3><a href="<?php echo $facebookUrl; ?>"><?php single_cat_title(); ?> on facebook</a></h3>
+			<div class="socialwidgetcontent">
 			<fb:like-box href="<?php echo $facebookUrl; ?>" width="380" height="320" show_faces="false" border_color="#fff" stream="true" header="false"></fb:like-box>
+			</div>
 			</div></div>
 		<?php
 	}
@@ -286,23 +303,48 @@ function sab_printartistwidgets($text) {
 	if ($flickrName && $flickrUid) {
 		?>
 			<!-- Start of Flickr Badge -->
-			<div class="boxstyle alignright" style="width: 400px; margin-left: 10px;">
-				<div class="boxstylecontent clearfix" style="height: 350px;">
-					<h3><?php single_cat_title(); ?> on <a href="http://www.flickr.com" id="flickr_www"><strong style="color:#3993ff">flick<span style="color:#ff1c92">r</span></strong>.com</a></h3>
-					<div id="flickr_badge_uber_wrapper">
-						<div id="flickr_badge_wrapper">
-							<script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?show_name=1&count=10&display=latest&size=s&layout=x&source=user&user=<?php echo urlencode($flickrUid); ?>"></script>
-							<div id="flickr_badge_source">
-								<span id="flickr_badge_source_txt">
-									<nobr>Go to</nobr> <a href="http://www.flickr.com/photos/<?php echo $flickrName; ?>/"><?php echo $flickrName; ?>'s photostream</a>
-								</span>
-								<br clear="all" />
+			<div class="boxstyle alignright socialwidgetwrapper">
+				<div class="boxstylecontent clearfix socialwidget">
+					<h3><a href="http://www.flickr.com/photos/<?php echo $flickrName; ?>/"><?php single_cat_title(); ?> on <span id="flickr_www"><strong style="color:#3993ff">flick<span style="color:#ff1c92">r</span></strong>.com</span></a></h3>
+					<div class="socialwidgetcontent">
+						<div id="flickr_badge_uber_wrapper">
+							<div id="flickr_badge_wrapper">
+								<script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?show_name=1&count=10&display=latest&size=s&layout=x&source=user&user=<?php echo urlencode($flickrUid); ?>"></script>
+								<div id="flickr_badge_source">
+									<span id="flickr_badge_source_txt">
+										<nobr>Go to</nobr> <a href="http://www.flickr.com/photos/<?php echo $flickrName; ?>/"><?php single_cat_title(); ?>'s photostream</a>
+									</span>
+									<br clear="all" />
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 			<!-- End of Flickr Badge -->
+		<?
+	}
+	$vimeoUserName = sab_findvimeousername($text);
+	if ($vimeoUserName) {
+		?>
+		<!-- START Vimeo Badge ... info at http://vimeo.com/widget -->
+		<div class="boxstyle alignright socialwidgetwrapper">
+			<div class="boxstylecontent clearfix socialwidget">
+				<h3><a href="http://vimeo.com/<?php echo $vimeoUserName; ?>/"><?php single_cat_title(); ?> on Vimeo</a></h3>
+				<div class="socialwidgetcontent">
+					<div class="vimeoBadge">
+						<script type="text/javascript" src="http://vimeo.com/<?php echo $vimeoUserName; ?>/badgeo/?stream=uploaded&amp;stream_id=&amp;count=16&amp;thumbnail_width=80&amp;show_titles=no"></script>
+						<div>
+							<span>
+								<nobr>Go to</nobr> <a href="http://vimeo.com/<?php echo $vimeoUserName; ?>/"><?php single_cat_title(); ?>'s videos</a>
+							</span>
+							<br clear="all" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- END Vimeo Badge -->
 		<?
 	}
 }

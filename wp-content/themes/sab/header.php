@@ -8,6 +8,7 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta property="fb:admins" content="524186608" />
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title><?php
 	/*
 	 * Print the <title> tag based on what is being viewed.
@@ -30,7 +31,7 @@
 
 	?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>?v=22" />
 <?php if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <link rel="icon" type="image/png" href="http://streetartbelgium.com/favicon.ico">
@@ -41,7 +42,7 @@
 <script src="/wp-content/themes/sab/js/cufon-yui.js" type="text/javascript"></script>
 <script src="/wp-content/themes/sab/js/Kozuka_Gothic_Pro_OpenType_300-Kozuka_Gothic_Pro_OpenType_700font.js" type="text/javascript"></script>
 <script type="text/javascript">
-	Cufon.replace('#menu');
+	Cufon.replace('#menulinks');
 	Cufon.replace('h1');
 	Cufon.replace('h2');
 	Cufon.replace('h3');
@@ -93,7 +94,7 @@
 				<a href="http://twitter.com/StreetArtBel" class="twitter"><span class="screen-reader-text">Twitter</span></a>
 			</div>
         
-			<hr style="clear:both; margin-left: 132px; top: -80px;"/>
+			<hr style="clear:both; margin-left: 132px; top: -70px;"/>
 		</div><!-- end menu -->
 	</header><!-- #branding -->
         

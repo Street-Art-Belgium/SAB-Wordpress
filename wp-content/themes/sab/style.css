@@ -1,10 +1,12 @@
+@charset "UTF-8";
+
 /*
 Theme Name: Street Art Belgium
 Theme URI: http://www.streetartbelgium.com
 Author: Jurriaan Persyn and Katrijn Michiels
 Author URI: http://www.streetartbelgium.com
 Description: Theme for StreetArtBelgium, design by Katrijn Michiels, implementation by Jurriaan Persyn, based on toolbox, a semantic, HTML5, canvas for CSS artists and an ultra-minimal set of super-clean templates for your own WordPress theme development.
-Version: 0.1
+Version: 0.2
 License: GNU General Public License
 License URI: license.txt
 Tags: microformats, html5
@@ -163,7 +165,7 @@ body {
 #socialmedia {
 	position: relative;
 	float:right;
-	/*margin-top: 20px;*/
+	margin-top: 50px;
 	margin-right: -20px;
 	z-index: 3;
 }
@@ -208,7 +210,7 @@ body {
 #menulinks {
 	float:right;
 	text-align: right;
-	margin-top: 10px;
+	margin-top: 40px;
 }
 
 #menulinks li {
@@ -361,7 +363,7 @@ h1 {
 	text-transform:uppercase;
 	font-weight: bold;
 	margin: 0px 0px 2px 0px;
-	font-size: 14px;
+	font-size: 15px;
 }
 h1 a {
 	color: black;
@@ -373,7 +375,6 @@ h2 {
 	margin: 5px 0px 10px 0px;
 	font-size: 12px;
 	background:#FCEE21;
-	padding: 5px 2px 0x 2px;
 	font-family: "Lucida Grande", Lucida, Verdana, Geneva, sans-serif;
 }
 
@@ -381,7 +382,7 @@ h3 {
 	text-transform:uppercase;
 	margin: 5px 0px 10px 0px;
 	font-size: 12px;
-	padding: 5px 2px 0x 2px;
+	padding: 0 2px 0 2px;
 	font-family: "Lucida Grande", Lucida, Verdana, Geneva, sans-serif;
 }
 
@@ -465,7 +466,7 @@ img.alignright {
 	margin: 5px 0px 10px 0px;
 	font-size: 13px;
 	font-weight: bold;
-	padding: 5px 2px 0x 2px;
+	padding: 5px 2px 0 2px;
 }
 
 
@@ -534,12 +535,12 @@ article.comment {
 /* =Searchresults
 -------------------------------------------------------------- */
 
-.serachresults_title {
+.searchresults_title {
 	text-transform:uppercase;
 	margin: 5px 0px 10px 0px;
 	font-size: 12px;
 	background:#FCEE21;
-	padding: 10px 2px 5x 2px;
+	padding: 10px 2px 5px 2px;
 }
 
 
@@ -652,9 +653,13 @@ article.comment {
 }
 
 article.featured h1 {
-	height: 16px;
+	font-size: 14px;
+	height: 17px;
 	overflow: hidden;
 	line-height: 18px;
+}
+.archivepost h1 {
+	font-size: 14px;
 }
 
 div.boxstyle {
@@ -681,12 +686,30 @@ article.featured .featuredcontent {
 	padding: 10px;
 }
 
+.homepagecolumnleft {
+	float: left;
+	width: 580px;
+}
+.homepagecolumnright {
+	float: right;
+	width: 380px;
+}
+
+.articlecolumnleft {
+	float: left;
+	width: 560px;
+}
+.articlecolumnright {
+	float: right;
+	width: 390px;
+}
+
 /*article.featured .date, .boxstyle .date {
 	text-transform:uppercase;
 	margin: 5px 0px 10px 0px;
 	font-size: 12px;
 	background:#FCEE21;
-	padding: 10px 2px 5x 2px;
+	padding: 10px 2px 5px 2px;
 }*/
 
 article.featured .entry-image {
@@ -813,7 +836,6 @@ div.catimage ul {
 	margin: 5px 0px 10px 0px;
 	font-size: 13px;
 	background:#FCEE21;
-	padding: 10px 2px 5x 2px;
 }
 #content a.highlight:hover, a.highlight:hover, #content .highlight:hover a {
 	text-decoration: none;
@@ -892,7 +914,7 @@ article.archivepost .entry-image {
 	float: left;
 	display: block;
 }
-#wp_page_numbers a {
+#wp_page_numbers a, #wp_page_numbers .space {
 	padding: 5px 7px;
 	display: block;
 	color: black;
@@ -1032,3 +1054,249 @@ Images are wrapped in divs classed "flickr_badge_image" with ids "flickr_badge_i
 #flickr_badge_uber_wrapper a:visited {text-decoration:none !important; background:inherit !important;color:#000000;}
 #flickr_badge_wrapper {background-color:#ffffff;border: solid 1px #ffffff}
 #flickr_badge_source {padding:0 !important; color:#000000 !important; clear: both;}
+
+/* You can modify these CSS styles */
+.vimeoBadge { margin: 0; padding: 0; font: normal 11px verdana,sans-serif; }
+.vimeoBadge img { border: 0; }
+.vimeoBadge a, .vimeoBadge a:link, .vimeoBadge a:visited, .vimeoBadge a:active { color: #3A75C4; text-decoration: none; cursor: pointer; }
+.vimeoBadge a:hover { color:#00CCFF; }
+#vimeo_badge_logo { display: none; }
+.vimeoBadge .credit { font: normal 11px verdana,sans-serif; }
+.vimeoBadge a:hover { text-decoration: none !important; }
+.vimeoBadge .clip { padding:0; float:left; margin:0 12px 12px 0; width:80px; line-height:0; border: 1px solid black;}
+.vimeoBadge .caption { font: normal 11px verdana,sans-serif; overflow:hidden; width:100px; height: 30px; }
+.vimeoBadge .clear { display: block; clear: both; visibility: hidden; } 
+
+.categorymapwrapper {
+	float: right; 
+	width: 471px;
+}
+.categoryspecialpieces {
+	width: 570px; 
+	float: left;
+}
+.categorydescriptionspecial {
+	width: 372px; 
+	float: right;
+}
+.categorydescriptiongeo {
+	float: left; 
+	width: 471px;
+}
+.categorydescriptiongeocontent {
+	height: 400px; 
+	overflow-y: auto;
+}
+.socialwidget {
+	 height: 350px;
+}
+.socialwidgetwrapper {
+	width: 400px; 
+	margin-left: 10px;
+}
+
+.searchformwrapper {
+	float: right;
+}
+
+.aboutleft {
+	float: left;
+	width: 570px;
+}
+.aboutright {
+	float: right;
+	 width: 370px;
+}
+
+.onlywidescreen { display: block; }
+.onlysmallscreen { display: none; }
+
+/* mobile styles */
+@media all and (max-width: 600px) {
+
+	.onlywidescreen { display: none; }
+	.onlysmallscreen { display: block; }
+
+	#logo {
+		margin: 5px;
+	}
+	#content {
+		margin: 0;
+	}
+	#site,
+	#wp_page_numbers {
+		width: auto;
+	}
+	#socialmedia, #logo, #menulinks, .postwrapper, article.featured, .post_3, .post_4, .recentcomments {
+		float: none;
+	}
+	#menu hr,
+	#socialmediafooter {
+		display: none;
+	}
+
+	/* menu */
+	#menulinks {
+		text-align: center;
+		margin: 0 auto;
+		padding: 10px;
+		width: 80%;
+	}
+	#menulinks li {
+		font-size: 18px;
+		border-bottom: 1px dotted black;
+		padding: 10px;
+	}
+	#socialmedia {
+		position: static !important;
+		float: none;
+		margin: 10px auto;
+		width: 192px;
+		height: auto;
+		text-align: center;
+		height: 70px;
+	}
+	#socialmedia a {
+		width: 64px !important;
+		height: 64px !important;
+		margin: 0;
+		color: black;
+		float: right;
+		top: auto !important;
+		left: auto !important;
+		right: auto !important;
+		position: static !important;
+	}
+	#socialmedia a.rss, #socialmedia a.rss:hover {
+		background: url(images/mobile_icon_feed.png);
+	}
+	#socialmedia a.twitter, #socialmedia a.twitter:hover {
+		background: url(images/mobile_icon_twitter.png);
+	}
+	#socialmedia a.facebook, #socialmedia a.facebook:hover {
+		background: url(images/mobile_icon_facebook.png);
+	}
+
+	#access {
+		margin-top: -50px;
+		z-index: 5;
+	}
+	
+	/* articles */
+	article.featured, 
+	.post_3 article.featured, 
+	.post_4 article.featured, 
+	.recentcomments, 
+	.post_5 article.featured, 
+	.post_6 article.featured, 
+	.post_7 article.featured, 
+	.post_8 article.featured, 
+	.post_1, .post_2, .post_3, .post_4, .post_5, .post_6, .post_7, .post_8, 
+	.homepagecolumnleft, .homepagecolumnright,
+	.articlecolumnleft, .articlecolumnright  {
+		float: none;
+		clear: both;
+		width: auto;
+		margin: 0;
+		padding: 0;
+	}
+
+	.postwrapper, .recentcomments, .articlecolumnleft, .articlecolumnright {
+		margin: 5px;
+	}
+
+	article.featured .entry-image, 
+	.post_1 article.featured .entry-image, 
+	.post_2 article.featured .entry-image, 
+	.post_3 article.featured .entry-image, 
+	.post_4 article.featured .entry-image, 
+	.post_5 article.featured .entry-image, 
+	.post_6 article.featured .entry-image, 
+	.post_7 article.featured .entry-image, 
+	.post_8 article.featured .entry-image {
+		float: none;
+		clear: both;
+		width: auto;
+	}
+
+	#wp_page_numbers {
+		margin: 5px;
+	}
+
+	/* artist and locations */
+	.artistsandlocations {
+		margin: 5px 5px 10px 5px;
+		border-right: 5px solid #FCEE21;
+		border-bottom: 5px solid #FCEE21;
+	}
+	.artistsandlocations div.artists, .artistsandlocations div.locations {
+		background: white;
+		width: auto;
+		margin: 0;
+		padding: 10px;
+		border: 1px solid black;
+	}
+	.artistsandlocations div.artists {
+		border-bottom: none;
+	}
+	.artistsandlocations div.locations {
+		border-top: none;
+		padding-top: 15px;
+	}
+	.artistsandlocations div.item {
+		width: 48%;
+	}
+	.artistsandlocations div.bold a {
+		font-weight: normal;
+	}
+	.artistsandlocations div.item:nth-child(4n+3) a, .artistsandlocations div.item:nth-child(4n) a {
+		font-weight: bold !important;
+	}
+
+	/* category */
+	.categorymapwrapper,
+	.categoryspecialpieces,
+	.categorydescriptionspecial,
+	.categorydescriptiongeo,
+	.categorydescriptiongeocontent,
+	.socialwidget {
+		float: none;
+		width: auto;
+		height: auto;
+	}
+	section {
+		padding: 5px;
+	}
+
+	.socialwidgetcontent {
+		display: none;
+	}
+	.socialwidgetwrapper {
+		width: auto;
+	}
+
+	.aboutright, .aboutleft {
+		width: auto;
+		float: none;
+	}
+	.aboutwrapper {
+		margin: 5px;
+	}
+
+	/* footer */
+	#colophon ul {
+		margin: 0;
+		text-align: center;
+		padding: 0;
+	}
+	#colophon li {
+		float: none;
+		display: block;
+		clear: both;
+		padding:10px;
+		margin: 0;
+	}
+	.searchformwrapper {
+		float: none;
+	}
+}

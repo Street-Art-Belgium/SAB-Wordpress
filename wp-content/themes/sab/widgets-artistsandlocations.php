@@ -10,7 +10,7 @@ if ($pageNumber === 1) {
 ?>
 
 </div>
-<div class="artistsandlocations clearfix">
+<div class="artistsandlocations clearfix<?php if ($GLOBALS['onlyWideScreen']) { ?> onlywidescreen<?php } ?>">
 	<div class="artists alignleft">
 		<div class="clearfix">
 			<h3><a href="/category/artists/">Top Artists</a></h3>

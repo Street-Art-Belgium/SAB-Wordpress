@@ -9,7 +9,7 @@
 
 	<footer id="colophon" role="contentinfo">
 		<ul>
-			<li style="float: right;">
+			<li class="searchformwrapper">
 				<?php get_search_form(); ?>
 				
 			</li>

@@ -9,7 +9,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 
-	<div class="alignleft" style="width: 560px;">
+	<div class="articlecolumnleft">
 		<div class="boxstyle">
 			<div class="boxstylecontent">
 				<header class="entry-header">
@@ -56,7 +56,7 @@
 
 	</div>
 
-	<div class="alignright" style="width: 390px;">
+	<div class="articlecolumnright">
 		<?php get_template_part( 'widgets', 'postcategories' ); ?>
 	</div>
 

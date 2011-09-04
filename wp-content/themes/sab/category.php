@@ -37,14 +37,14 @@ get_header(); ?>
 
 		<?php if (($categoryID != 6) OR $geoIsSet OR $categorydesc) { ?>
 			<?php if (!$isSpecialCategory) { ?><div class="clearfix"><?php } ?>
-				<div class="boxstyle"
+				<div class="boxstyle 
 					<?php if ($isSpecialCategory) { ?> 
-						style="width: 372px; float: right;"
+						categorydescriptionspecial
 					<?php } elseif (isset($wpgeo) && $geoIsSet) { ?>
-						style="float: left; width: 471px;"
+						categorydescriptiongeo
 					<?php } ?>
-					>
-					<div class="boxstylecontent"<?php if (!$isSpecialCategory && isset($wpgeo) && $geoIsSet) { ?> style="height: 400px; overflow-y: auto;"<?php } ?>>
+					">
+					<div class="boxstylecontent<?php if (!$isSpecialCategory && isset($wpgeo) && $geoIsSet) { ?>  categorydescriptiongeocontent<?php } ?>">
 					
 						<header class="page-header">
 							<div class="clearfix">
@@ -92,7 +92,7 @@ get_header(); ?>
 				<?php
 					if (!$isSpecialCategory && isset($wpgeo) && $geoIsSet) { 
 				?>
-					<div class="boxstyle" style="float: right; width: 471px;">
+					<div class="boxstyle categorymapwrapper">
 						<div class="boxstylecontent" style="padding: 0px; height: 420px;">
 							<?php $wpgeo->categoryMap(array('height' => '420px')); ?>
 											
@@ -107,7 +107,7 @@ get_header(); ?>
 			} 
 		?>
 		
-		<div class="boxstyle"<?php if ($isSpecialCategory) { ?> style="width: 570px; float: left;"<?php } ?>>
+		<div class="boxstyle<?php if ($isSpecialCategory) { ?> categoryspecialpieces<?php } ?>">
 			<div class="boxstylecontent clearfix">
 				<div class="clearfix">
 					<div class="clearfix"><?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?></div>
