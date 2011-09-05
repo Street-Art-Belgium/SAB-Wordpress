@@ -63,7 +63,7 @@
 					$categorydesc = trim(preg_replace('/<!--(.*?)-->/', '', $category->category_description));
 					$categorydesc = strip_tags($categorydesc);
 					if ($categorydesc) {
-						echo "<div class=\"description\">" . substr($category->category_description, 0, 100) . 
+						echo "<div class=\"description\">" . substr($categorydesc, 0, 100) . 
 						"<a href=\"/category/artists/" . $category->slug. "\">&hellip;</a></div>";	
 					}
 					
