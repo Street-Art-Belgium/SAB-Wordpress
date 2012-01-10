@@ -1,4 +1,7 @@
-
+# general
 *.DS_Store
 .project
 .settings/
+
+# custom
+wp-config.php

@@ -7,15 +7,16 @@
 <html <?php language_attributes(); ?> xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
-<meta property="fb:admins" content="524186608" />
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title><?php
 	/*
 	 * Print the <title> tag based on what is being viewed.
 	 */
-	global $page, $paged;
-
 	wp_title( '|', true, 'right' );
+
+	/*
+
+	global $page, $paged;
 
 	// Add the blog name.
 	bloginfo( 'name' );
@@ -28,6 +29,8 @@
 	// Add a page number if necessary:
 	if ( $paged >= 2 || $page >= 2 )
 		echo ' | ' . sprintf( __( 'Page %s', 'toolbox' ), max( $paged, $page ) );
+
+	*/
 
 	?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
@@ -60,6 +63,7 @@
 <![endif]-->
 
 <?php wp_head(); ?>
+
 </head>
 
 <body <?php body_class(); ?> onload="setupZoom()">

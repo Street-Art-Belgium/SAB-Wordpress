@@ -188,6 +188,35 @@ function sab_findfirstimageurl($text)
 	return "";
 }
 
+function sab_findimageurls($text) {
+	// The Regular Expression filter
+	$regexImageUrl = "/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?(\.jpg|\.png)/";
+
+	// Check if there is a url in the text
+	if (preg_match_all($regexImageUrl, $text, $matches)) 
+	{
+		return array_unique($matches[0]);
+	}
+
+	return array();
+}
+
+function add_fbimage() {
+	global $post;
+	echo "\n\n";
+	if (is_single($post)) {
+		$content = $post->post_content;
+		if ($content) { 
+			$urls = array_slice(sab_findimageurls($content), 1);
+			foreach($urls as $url) {
+				echo '<meta property="og:image" content="' . $url . '"/>' . "\n";
+			}
+		}	
+	}
+	echo "\n\n";
+}
+add_action( 'wp_head', 'add_fbimage', 5 );
+
 /* find facebook url */
 function sab_findfacebookurl($text) 
 {

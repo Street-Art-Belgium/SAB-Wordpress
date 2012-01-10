@@ -796,6 +796,7 @@ ul.otherpieces {
 ul.otherpieces li {
 	float: left;
 	margin-right: 5px;
+	margin-bottom: 5px;
 }
 ul.otherpieces li:hover {
 	opacity: 0.8;
